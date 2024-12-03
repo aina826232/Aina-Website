@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock with Date</title>
+    <!-- Import Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /*font family from google fonts*/
+        @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
+
+        html {
+            font-size: 62.5%; /*62.5% = 10px; to make it easier to calculate REM units.*/
+        }
+        body {
+            text-align: center;
+            font-family: "Cambria", sans-serif;
+            font-weight: 300;
+            font-size: 2.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #EFB6C8;
+            height: 100vh;
+        }
+	
+        #clock {
+            max-width: 800px;
+            padding: 20px;
+            border: 2px solid #8174A0;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+        #date-time {
+            font-size: 2.4rem;
+            margin: 0;
+        }
+
+        /* for smaller screens below 700px */
+        @media only screen and (max-width: 700px) {
+            body {font-size: 1.8rem;}
+        }
+
+        /*for smaller screens below 300px*/
+        @media only screen and (max-width: 300px) {
+            body {font-size: 1.6rem;}
+        }
+    </style>
+</head>
+<body>
+
+	<p> .☘︎ ݁˖ &nbsp;</p>	
+	
+    <br><div id="clock">
+        <h1 id="date-time"></h1>
+    </div>
+    <script>
+        window.addEventListener("load", () => {
+            clock();
+            function clock() {
+                const today = new Date();
+
+                // Get time components
+                const hours = today.getHours();
+                const minutes = today.getMinutes();
+                const seconds = today.getSeconds();
+
+                // Add '0' to hour, minute & second when they are less than 10
+                const hour = hours < 10 ? "0" + hours : hours;
+                const minute = minutes < 10 ? "0" + minutes : minutes;
+                const second = seconds < 10 ? "0" + seconds : seconds;
+
+                // Make clock a 12-hour time clock
+                const hourTime = hour > 12 ? hour - 12 : hour;
+
+                // Assigning 'am' or 'pm' to indicate time of the day
+                const ampm = hour < 12 ? "AM" : "PM";
+
+                // Get date components
+                const month = today.getMonth();
+                const year = today.getFullYear();
+                const day = today.getDate();
+
+                // List of all months in a year
+                const monthList = [
+                    "January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+
+                // Get current date and time
+                const date = `${monthList[month]} ${day}, ${year}`;
+                const time = `${hourTime}:${minute}:${second} ${ampm}`;
+
+                // Combine current date and time
+                const dateTime = `${date} - ${time}`;
+
+                // Print current date and time to the DOM
+                document.getElementById("date-time").innerHTML = dateTime;
+                setTimeout(clock, 1000);
+            }
+        });
+    </script>
+		<p>&nbsp; .☘︎ ݁˖ </p>
+</body>
+</html>
