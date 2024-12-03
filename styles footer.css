@@ -1,0 +1,58 @@
+body {
+
+/* Style the footer */
+.footer {
+  background-color: #035397;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.50), 0 18px 32px 0 rgba(0, 0, 0, 0.50);
+  text
+  height: 400px;
+
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="footer">
+  <h3 style="color:white">Social Media</h3>
+  <a href="https://www.facebook.com/share/1ARGbV9KWL/" class="fa fa-facebook"><img src="facebook.png" alt="Facebook" style="width 40px;height:40px;"></a>
+
+  <a href="https://www.instagram.com/nurxina_sh/profilecard/?igsh=MW90MW1xaW1ndjUzNg==" class="fa fa-instagram"><img src="instagram.png" alt="Facebook" style="width 40px;height:40px;"></a>
+ 
+  <ul class="copyright">
+  <li style="color:white">
+  © Aina Ashikin  |  2022826232@student.uitm.edu.my  |   
+  <a target="_blank" href="">Aina Information Details</a>
+  </li>
+  </ul>
+    
+</div>
+
+</body>
